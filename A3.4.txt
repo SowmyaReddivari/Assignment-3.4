@@ -1,0 +1,50 @@
+1. Explain HDFS federation and High availability
+   
+   HDFS Federation:
+ 
+         - HDFS Federation improves the hdfs architecture by using namespace and storage
+
+         - It supports multiple namespaces in the cluster to improve the scalabilty and isolation.
+
+         - It extends the HDFS cluster to new implementations and use cases.
+
+         - Federation uses independent namenodes to scale the name service horizontally.
+
+         - For example,Face book faces some limitations.These limitations are solved by HDFS Federation.
+
+         - In HDFS Federation,Block Pool is used.It is a set of block from a single namespace.
+
+         - It supports scalability and isolation.
+  
+   High availability:
+
+         - Hadoop 2.0 introduce High availability as new feature.
+
+         - Hadoop 2.o supports multiple name nodes.
+
+         - It Provides vendor to be available at all the time by deploying two NameNode.
+
+         - It supports automated failover by using stack resiliency and a standby node.
+
+         - These High availability are used for handling NameNode failure without any loss of data.
+
+         - It self recovers from failures.
+
+          
+2. How HDFS handles failures while writing data
+     
+         - HDFS uses Pipeline method for writing data into a file.
+        
+         - HDFS uses namenodes to store the multiple replicas of a block.
+
+         - HDFS is Fault tolerant.So if a datanode fails while writing the data then we can recover all the data and files.
+         
+         - In PipeLine recovery,if any failure occurs the pipeline is closed and remaining packets in the queue are added to data queue so that we will not miss any packets.
+  
+         - The failed node is removed and new datanodes are used for remaining blocks.
+         
+         - When multiple nodes leads to the failure then by using replication techniques we can retrieve our data easily.
+         
+         - There are many other data recovery techniques like data streamimg Failure recovery and close Fail recovery.
+         
+        
